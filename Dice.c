@@ -4,11 +4,14 @@
 
 #define dice_size 2
 
+void greeting();
 int dice_roll();
 
 int main(){
     int Dice[dice_size];
     int total=0;
+
+    greeting();
 
     srand(time(NULL));
 
@@ -22,6 +25,15 @@ int main(){
         printf("Die %d: %d\n", i+1, Dice[i]);
     }
     printf("Total value: %d\n", total);
+}
+
+void greeting(){
+    char name[10];
+
+    printf("What is your name?\n> ");
+    scanf("%s", name);
+
+    printf("Hello, %s!\n", name);
 }
 
 int dice_roll(){
