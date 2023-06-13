@@ -8,6 +8,8 @@ void greeting();
 int dice_roll();
 void judge(int);
 
+char name[10];
+
 int main(){
     int Dice[dice_size];
     int total=0;
@@ -31,8 +33,6 @@ int main(){
 }
 
 void greeting(){
-    char name[10];
-
     printf("What is your name?\n> ");
     scanf("%s", name);
 
@@ -44,6 +44,6 @@ int dice_roll(){
 }
 
 void judge(int n){
-    if (n > 7) printf("You won\n");
-    else printf("You lost\n");
+    if (n > 7) printf("%s won!\n", name);
+    else printf("%s lost!\n", name);
 }
