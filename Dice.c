@@ -5,6 +5,7 @@
 #define dice_size 2
 
 int dice_roll();
+void judge(int);
 
 int main(){
     int Dice[dice_size];
@@ -22,8 +23,15 @@ int main(){
         printf("Die %d: %d\n", i+1, Dice[i]);
     }
     printf("Total value: %d\n", total);
+
+    judge(total);
 }
 
 int dice_roll(){
     return (rand() % 6 + 1);
+}
+
+void judge(int n){
+    if (n > 7) printf("You won\n");
+    else printf("You lost\n");
 }
